@@ -8,6 +8,4 @@ class Controller_Site extends Controller_Template {
     parent::before();
   }
 
-  
-
 }

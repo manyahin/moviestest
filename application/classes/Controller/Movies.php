@@ -1,17 +1,16 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Welcome extends Controller {
+class Controller_Movies extends Controller_Site {
 
 	public function action_index()
 	{
-
+    $movies_names = '';
     $movies = ORM::factory('Movie')->find_all();
     foreach ($movies as $key => $movie) {
-      var_dump($movie->title);
+      $movies_names[] = $movie->title;
     }
     
-
-		$this->response->body('hello, world!');
+    $this->template->content = implode(', ', $movies_names);
 	}
 
-} // End Welcome
+}

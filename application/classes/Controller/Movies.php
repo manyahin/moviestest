@@ -3,6 +3,7 @@
 class Controller_Movies extends Controller_Site {
 
   private $first_movie;
+  // i need this option for save first movie in the list.
 
 	public function action_index()
 	{
@@ -10,6 +11,8 @@ class Controller_Movies extends Controller_Site {
     $this->template->movie_table = $this->genTable();
 
     $this->template->comments_block = $this->genComments($this->first_movie);
+
+    $this->template->comment_form = View::factory('comment_form');
 	}
 
   public function genTable() 

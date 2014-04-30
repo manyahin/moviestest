@@ -4,7 +4,10 @@ class Model_Movie extends ORM {
   
   protected $_table_name = 'movies';
 
-  protected $_has_many = array('reviews' => array('model' => 'Review', 'foreign_key' => 'movie_id'));
+  protected $_has_many = array(
+    'reviews' => array('model' => 'Review', 'foreign_key' => 'movie_id'),
+    'comments' => array('model' => 'Comment', 'foreign_key' => 'movie_id')
+  );
 
   // public $rating;
 

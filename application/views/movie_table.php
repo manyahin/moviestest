@@ -15,7 +15,7 @@
       $movie_data = [$movie->title, $movie->director, $movie->year, $movie->keywords, $movie->getRating()]; 
       // I don't shure if call model from view it's normal.
 
-      echo '<tr><td>' . implode('</td><td>', $movie_data) . '</td></tr>';
+      echo '<tr><td class="movie" data-id="' . $movie->id . '">' . implode('</td><td>', $movie_data) . '</td></tr>';
     }
   ?>
   </tbody>

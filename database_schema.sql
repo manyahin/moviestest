@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `reviews` (
   `movie_id` int(11) UNSIGNED NOT NULL,
   `rating` int(2) UNSIGNED NOT NULL, -- Minimum is 1, maximum is 10, like 10 stars
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- and for this table i did should use generator
 INSERT INTO `reviews` (`id`, `movie_id`, `rating`) VALUES(1, 1, 10);
@@ -55,11 +55,25 @@ INSERT INTO `reviews` (`id`, `movie_id`, `rating`) VALUES(16, 7, 1);
 INSERT INTO `reviews` (`id`, `movie_id`, `rating`) VALUES(17, 8, 3);
 INSERT INTO `reviews` (`id`, `movie_id`, `rating`) VALUES(18, 8, 1);
 
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `movie_id` int(11) UNSIGNED NOT NULL,
+  `author` varchar(254) NOT NULL,
+  `text` text NOT NULL,
+  `created` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-Ratings
+INSERT INTO `comments` (`id`, `movie_id`, `author`, `text`, `created`) VALUES(1, 1, 'Mickey Mouse', 'Great movie!', NOW());
+INSERT INTO `comments` (`id`, `movie_id`, `author`, `text`, `created`) VALUES(2, 1, 'Donald Duck', 'Wonderful work!', NOW());
+INSERT INTO `comments` (`id`, `movie_id`, `author`, `text`, `created`) VALUES(3, 2, 'Bob', 'I recommend it', NOW());
+INSERT INTO `comments` (`id`, `movie_id`, `author`, `text`, `created`) VALUES(4, 3, 'John', 'It is the best movie!', NOW());
 
 
 
-Comments
+
+
+
+
 
 

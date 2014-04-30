@@ -4,7 +4,7 @@ class Controller_Site extends Controller_Template {
 
   public function before()
   {
-    // Run Kohana_Controller_Template::before() for load default template 'template';
+    // Run Kohana_Controller_Template::before() for set default template 'template';
     parent::before();
   }
 

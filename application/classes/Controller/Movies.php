@@ -4,13 +4,20 @@ class Controller_Movies extends Controller_Site {
 
 	public function action_index()
 	{
-    $movies_names = '';
-    $movies = ORM::factory('Movie')->find_all();
-    foreach ($movies as $key => $movie) {
-      $movies_names[] = $movie->title;
-    }
     
-    $this->template->content = implode(', ', $movies_names);
+    $this->template->movie_table = $this->genTable();
+    // $this->template->content = implode(', ', $movies_names);
 	}
+
+  public function genTable() {
+
+    $movies = ORM::factory('Movie')->find_all();
+
+    $view = View::factory('movie_table')
+      ->bind('movies', $movies);
+    
+    return $view;
+
+  }
 
 }

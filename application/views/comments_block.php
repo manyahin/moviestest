@@ -9,8 +9,8 @@
   <div>
     <ul>
       <li><strong>Submitted on:</strong> <?=date('d-m-Y',strtotime($comment->created));?></li>
-      <li><strong>Author:</strong> <?=$comment->author;?></li>
-      <li><strong>Comment:</strong> <?=$comment->text;?></li>
+      <li><strong>Author:</strong> <?=HTML::chars($comment->author);?></li>
+      <li><strong>Comment:</strong> <?=HTML::chars($comment->text);?></li>
     </ul>
   </div>
   <?php

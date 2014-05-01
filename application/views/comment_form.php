@@ -4,7 +4,3 @@
 <div>
   <button id="comment_submit" disabled="disabled">Send comment</button>  
 </div>
-
-
-
-

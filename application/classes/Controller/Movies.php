@@ -33,6 +33,7 @@ class Controller_Movies extends Controller_Site {
 
   }
 
+  // I thinking it's not from this controller
   public function genComments($movie_id)
   {
     $movie = ORM::factory('Movie', $movie_id);
